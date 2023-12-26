@@ -1,4 +1,4 @@
-const data=[
+const dataQuiz=[
     {
         "question": "A flashing red traffic light signifies that a driver should do what?",
         "A": "stop",
@@ -4376,4 +4376,4 @@ const data=[
         "answer": "C"
     }
 ]
-export default data;
+export default dataQuiz;

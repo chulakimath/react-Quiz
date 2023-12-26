@@ -1,4 +1,4 @@
-const data=[
+const dataQuiz2=[
     {
       "question": "What is the correct syntax for declaring a variable in JavaScript?",
       "A": "var variableName;",
@@ -1273,4 +1273,4 @@ const data=[
 
 
   ]
-  export default data;
+  export default dataQuiz2;

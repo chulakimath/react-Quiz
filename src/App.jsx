@@ -1,13 +1,30 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import './App.css'
-import data from './data2';
+import dataQuiz from "./data";
+import dataQuiz2 from './data2';
 
 function App() {
   const [score, setScore] = useState(0);
   const [attempted, setAttempted] = useState(0)
   const [question, setQuestion] = useState({});
+  const [data,setData]=useState(dataQuiz);
+  const [dataState,setDataState]=useState("Non-programming")
 
+
+  const programmingDataHandler=()=>{
+    console.log("clicked")
+      if(data==dataQuiz){
+        setData(dataQuiz2)
+        setDataState("programming")
+      }
+      else{
+        setData(dataQuiz)
+        setDataState("Non-programming")
+
+      }
+  }
+  
   const handler = (e) => {
     if (e.target.id == question["answer"]) {
       setScore(prev => prev + 5);
@@ -19,7 +36,7 @@ function App() {
     }
   }
   const gameEnd = () => {
-    let finalScore = score / attempted
+    let finalScore = (score / (attempted*5))*100
     if (isNaN(finalScore)) {
       alert(`Just Try Game Once Before Ending`)
       return
@@ -28,15 +45,13 @@ function App() {
 
     setScore(0);
     setAttempted(0);
-
-
   }
 
   const getQuestion = useCallback(() => {
     let randomNumber = Math.floor(Math.random() * data.length);
     setQuestion((prev) => data[randomNumber])
-  }, [setQuestion])
-  useEffect(getQuestion, [score])
+  }, [setQuestion,data])
+  useEffect(getQuestion, [score,data])
 
 
 
@@ -46,12 +61,17 @@ function App() {
         <div className='flex flex-col place-items-center  h-screen'>
           <div>
             <div className='text-center sm:flex place-content-center gap-32 bg-red-400 w-screen py-5 text-lg '>
+              <button className='border-2 border-emerald-800 hover:bg-yellow-300 p-2 rounded-lg '
+                onClick={programmingDataHandler}
+              >{dataState}</button>
               <div>Score : {score}</div>
               <div>Attempted : {attempted}</div>
               <button className='border-2 border-red-900 text-white px-5 py-1  text-center rounded-lg cursor-help hover:bg-red-600 hover:border-yellow-500 transition-all duration-300 mt-2 sm:mt-0'
                 onClick={gameEnd}>
                 End Game</button>
 
+            </div>
+            <div>
             </div>
             <div className='text-center sm:place-content-center'>
               <div className='p-1 bg-yellow-300 text-slate-950 sm:p-2 sm:w-6/12 sm:inline-flex place-content-center'>Question: </div>
