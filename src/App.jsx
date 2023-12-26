@@ -63,18 +63,18 @@ function App() {
           <div className='p-1 bg-yellow-300 text-slate-950 text-center w-screen m:p-2 sm:w-6/12 sm:inline-flex place-content-center'>Options:choose Corret Answer </div>
 
           <div>
-            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md hover:bg-slate-400 hover:text-black transition-all duration-500 hover:shadow-black cursor-none' onClick={handler}>
+            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md cursor-pointer' onClick={handler}>
               <div id='A' className='text-left'><span>{"A . "}  </span> {question['A']}</div>
             </div>
-            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md hover:bg-slate-400 hover:text-black transition-all duration-500 hover:shadow-black cursor-none' onClick={handler}>
+            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md cursor-pointer' onClick={handler}>
               <div id='B' className='text-left'><span>{"B . "}  </span> {question['B']}</div>
 
             </div>
-            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md hover:bg-slate-400 hover:text-black transition-all duration-500 hover:shadow-black cursor-none' onClick={handler}>
+            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md cursor-pointer' onClick={handler}>
               <div id='C' className='text-left'><span>{"C . "}  </span> {question['C']}</div>
 
             </div>
-            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md hover:bg-slate-400 hover:text-black transition-all duration-500 hover:shadow-black cursor-none' onClick={handler}>
+            <div className='bg-slate-900 px-3 py-2 mt-4 rounded-lg shadow-yellow-300 shadow-md cursor-pointer' onClick={handler}>
               <div id='D' className='text-left'><span>{"D . "}  </span> {question['D']}</div>
             </div>
 
